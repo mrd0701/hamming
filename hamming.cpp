@@ -26,7 +26,10 @@ int GetR(int n) {
 
 std::string Encode(int m, int n, std::string& data){
     std::vector<int> encoded(n + 1, 0);
-
+    int r = GetR(n);
+    if(m+r != n){
+        return std::string("error m + r != n");
+    }
     int data_i = 0;
     for(int i = 1; i <=n; i++){
         if(!IsPowerOfTwo(i)){
